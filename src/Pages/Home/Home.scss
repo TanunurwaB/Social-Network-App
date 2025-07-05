@@ -1,0 +1,9 @@
+@import "../../style.scss";
+
+.homepage {
+  @include themify($theme) {
+    color: themed("textColor");
+    background-color: themed("bg");
+    padding: 30px 20px;
+  }
+}

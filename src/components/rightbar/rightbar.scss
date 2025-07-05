@@ -1,0 +1,91 @@
+@import "../../style.scss";
+
+.rightbar {
+  @include themify($theme) {
+    color: themed("textColor");
+    background-color: themed("bg");
+    flex: 3;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+
+      .item {
+        padding: 20px;
+        box-shadow: 2px 0px 0px 4px rgba(185, 149, 149, 0.19);
+        -webkit-box-shadow: 2px 0px 0px 4px rgba(185, 149, 149, 0.19);
+        -moz-box-shadow: 2px 0px 0px 4px rgba(185, 149, 149, 0.19);
+
+        span {
+          color: themed("textColor");
+          padding-left: 10px;
+          display: inline;
+          font-size: 13px;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 15px 0px;
+          border-radius: 25%;
+
+          .userinfo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+
+            img {
+              width: 30px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-right: 10px;
+            }
+
+            span {
+              font-weight: 500;
+              color: themed("textColor");
+            }
+
+            .online {
+              width: 10px;
+              height: 10px;
+              background-color: limegreen;
+              border-radius: 50%;
+              position: absolute;
+              top: 0px;
+              left: 22px;
+            }
+          }
+
+          .buttons {
+            button {
+              border: none;
+              background-color: #3b5999;
+              color: white;
+              padding: 5px 10px;
+              border-radius: 20px;
+              cursor: pointer;
+              margin-right: 10px;
+              font-weight: bold;
+
+              &:last-child {
+                background-color: rgb(237, 69, 69);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
